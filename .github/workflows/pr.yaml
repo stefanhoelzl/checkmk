@@ -59,6 +59,7 @@ jobs:
         sudo apt-get install ksh librrd-dev libldap2-dev libsasl2-dev libkrb5-dev gettext
         buildscripts/infrastructure/build-nodes/scripts/install-pipenv.sh
         make .venv
+        mkdir -p ${{ env.PIPENV_CACHE_DIR }}
     - name: Run ${{ matrix.name  }}
       env:
         TEST_TARGETS: ${{ matrix.target }}
