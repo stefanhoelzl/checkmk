@@ -14,8 +14,8 @@ jobs:
   testing:
     runs-on: ubuntu-20.04
     env:
-      PIP_CACHE_DIR: "$HOME/.cache/pip"
-      PIPENV_CACHE_DIR: "$HOME/.cache/pipenv"
+      PIP_CACHE_DIR: "${{ env.HOME }}/.cache/pip"
+      PIPENV_CACHE_DIR: "${{ env.HOME }}/.cache/pipenv"
       PIPENV_IGNORE_VIRTUALENVS: 1
       PYTHONWARNINGS: ignore:DeprecationWarning
     strategy:
