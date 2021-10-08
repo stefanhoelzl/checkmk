@@ -58,8 +58,8 @@ jobs:
         # gettext: Needed for some "unit tests" (test_i18n.py)
         sudo apt-get install ksh librrd-dev libldap2-dev libsasl2-dev libkrb5-dev gettext
         buildscripts/infrastructure/build-nodes/scripts/install-pipenv.sh
-        make .venv
         mkdir -p ${{ env.PIPENV_CACHE_DIR }}
+        make .venv
     - name: Run ${{ matrix.name  }}
       env:
         TEST_TARGETS: ${{ matrix.target }}
